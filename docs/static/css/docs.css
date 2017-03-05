@@ -1,0 +1,15 @@
+.menu-side-bar {
+	float: left;
+	width: 200px;
+	height: 500px;
+}
+
+.header {
+	text-align: center
+}
+
+.thumnails {
+	float: right;
+	width: 300px;
+	height: 500px;
+}
