@@ -1,4 +1,8 @@
 from django.db import models
 
-class Docs(models.Model):
-	title = models.TextField()
+class Doc(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
