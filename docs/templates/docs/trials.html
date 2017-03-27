@@ -1,0 +1,71 @@
+{% extends 'docs/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Trials
+{% endblock %}
+
+{% block content %}
+<div class="sidebar">
+	<ul>
+		<li><a class="active" href="#WorldWarII">World War II</a></li>
+		<li><a href="#PostWorldWarII">Post World War II</a></li>
+		<li><a href="#ColdWar">Cold War</a></li>
+		<li><a href="#PostColdWar">Post Cold War</a></li>
+	</ul>
+</div>
+
+<div class="container" style="width: 70%; margin-top: 10px; margin-left: 25%;">
+<div id="trialCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      
+      <div class="item active">
+      <a href="trial_details.html">
+        <div style="background-color: red; width: 600px; height: 500px; margin: auto;"></div>
+        <div class="carousel-caption">
+                <h3>Title of the trial</h3>
+                <p>A bit summary of the trial</p>
+                <p>This one is clickable and contains video and transcript</p>
+            </div>
+            </a>
+      </div>
+
+      <div class="item">
+        <div style="background-color: blue; width: 600px; height: 500px; margin: auto;"></div>
+        <div class="carousel-caption">
+                <h3>Title of the trial</h3>
+                <p>A bit summary of the trial</p>
+            </div>
+      </div>
+    
+      <div class="item">
+        <div style="background-color: yellow; width: 600px; height: 500px; margin: auto;"></div>
+        <div class="carousel-caption">
+                <h3>Title of the trial</h3>
+                <p>A bit summary of the trial</p>
+            </div>
+      </div>
+
+      <div class="item">
+        <div style="background-color: green; width: 600px; height: 500px; margin: auto;"></div>
+        <div class="carousel-caption">
+                <h3>Title of the trial</h3>
+                <p>A bit summary of the trial</p>
+            </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#trialCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#trialCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+{% endblock %}

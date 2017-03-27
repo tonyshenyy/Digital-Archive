@@ -1,0 +1,32 @@
+{% extends 'docs/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Digital Archives
+{% endblock %}
+
+{% block content %}
+<div class="home">
+<div class="home-content">
+	<h1>Welcome</h1>
+	<p>This is the project for archiving trials and cases. You can search stuff you want in the search box below, or you can select trials or cases on the top menu bar.</p>
+</div>
+<div class="row search" style="width: 100%;">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form role="form">
+            <div class="input-group">
+              <input type="text" class="form-control input-sm">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+              </span>
+            </div>
+    </form>
+  </div>
+</div>
+<hr>
+<div class="home-content">
+	<h1>About this project</h1>
+	<p>The purpose of our project is to ...</p>
+</div>
+</div>
+{% endblock %}

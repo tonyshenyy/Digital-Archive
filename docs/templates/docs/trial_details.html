@@ -1,0 +1,137 @@
+{% extends 'docs/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Trial 1
+{% endblock %}
+
+{% block style %}
+<style type="text/css">
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+.white_content {
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 16px;
+  border: 16px solid orange;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+</style>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+$(document).ready(function(){
+    /* Get iframe src attribute value i.e. YouTube video url
+    and store it in a variable */
+    var url = $("#cartoonVideo").attr('src');
+    
+    /* Assign empty url value to the iframe src attribute when
+    modal hide, which stop the video playing */
+    $("#myModal").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    
+    /* Assign the initially stored url back to the iframe src
+    attribute when modal is displayed again */
+    $("#myModal").on('show.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<table class="trial-items" style="width: 100%; height: 100%; margin-top: 10%;">
+<tr>
+<td style="text-align: center;">
+<a href="#myModal" class="btn btn-lg btn-link" data-toggle="modal">
+<img src="{% static 'images/movies.png' %}">
+</a>
+
+<div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Lo Stato di Eccezione/The State of Exception (2008)</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="cartoonVideo" width="560" height="315" src="https://www.youtube.com/embed/PujWtR-LBQ4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</td>
+<td style="text-align: center;">
+<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+<img src="{% static 'images/text_x_generic.png' %}"></a>
+<div id="light" class="white_content"><pre>
+Judge: 
+I will read now and you repeat what I say. Okay?
+
+Witness: 
+Yes.
+
+Judge reads the following statement, which the Witness repeats. The sound of the Witness's statement is interspersed with a view of him crying during his subsequent testimony:
+Understanding that I am morally and legally responsible for my testimony....
+(Consapevole della responsabilità morale e giuridica che assumo)
+
+Prosecutor:
+Do you remember that day?
+
+Witness:
+The 29th?
+
+Prosecutor:
+Yes, the 29th of September [1944].
+
+Witness:
+September 29th.
+
+Prosecutor:
+Did you see any episodes [of violence]?
+
+Witness:
+Ah, not a lot. I saw some dead people, that's all. 
+
+[Camera switches to an aerial map of the region where the massacre occurred 62 years earlier, and other footage from that era.]
+
+Narrator (director German Maccioni):
+Between 29 September and 5 October 1944, more than 100 small villages around Marzabotto, Monsuno, and Grizzana were the site of an extermination campaign [carried out by Germany's Waffen SS]: 760 dead in only 7 days. 
+
+Lawyer for the plaintiffs = elderly survivors of the massacre in 1944:
+Marzabotto is the archetype of the "state of exception." This idea of the state of exception refers to the elimination of an entire community by a group of criminals. 
+
+Narrator:
+An entire farming community was annihilated based on a predetermined plan.
+
+Lawyer addressing his clients, the survivors: 
+Your injury is not only a result of the losses you have suffered. You were also injured by the long delay before you were able to seek justice in court. ....
+
+Clip 1:28-33
+Lawyer for the defense:
+History will also be written based on the transcript of this trial.</pre> <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+  </div>
+  <div id="fade" class="black_overlay"></div>
+</td>
+</tr>
+</table>
+{% endblock %}
